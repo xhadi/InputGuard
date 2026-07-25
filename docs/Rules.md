@@ -115,15 +115,15 @@ One table only. No schema changes after Friday 10:00 AM without team vote.
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(64) NOT NULL,
+    password VARCHAR(128) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
 ### Rules
 
-- **Password storage:** Always hash with `hashlib.sha256(password.encode()).hexdigest()` before storing or comparing.
-- **Password field length:** 64 characters (hex digest of SHA-256).
+- **Password storage:** Always hash with `bcrypt` before storing, and verify with `bcrypt.checkpw` on login.
+- **Password field length:** 128 characters (bcrypt hash string).
 - **Username constraints:** Max 50 chars, unique, not null.
 
 ---
