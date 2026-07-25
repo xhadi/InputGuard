@@ -1,19 +1,4 @@
 # Web Framework
-<<<<<<< HEAD
-fastapi==0.111.0
-uvicorn[standard]==0.30.0
-
-# Database
-sqlalchemy==2.0.31
-
-# Environment & Configuration
-python-dotenv==1.0.1
-pydantic-settings==2.3.4
-
-# Form Data & Templating
-python-multipart==0.0.9
-jinja2==3.1.4
-=======
 fastapi
 uvicorn[standard]
 
@@ -34,4 +19,3 @@ bcrypt
 # Testing
 pytest
 httpx
->>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
