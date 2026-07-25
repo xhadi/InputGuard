@@ -259,7 +259,7 @@ inputguard/
 │   └── payloads.py
 │
 ├── 📂 docs/                        # Member D
-│   └── TEAM_CONTRACTS.md
+│   └── Rules.md
 │
 ├── 📄 .env                         # Member C
 ├── 📄 Dockerfile                   # Member C
@@ -285,7 +285,7 @@ inputguard/
 
 **Signed-off:**
 
-- [ ] Member A (Backend)
+- [x] Member A (Backend)
 - [ ] Member B (Security)
 - [ ] Member C (Frontend + DevOps)
 - [ ] Member D (Docs + QA)

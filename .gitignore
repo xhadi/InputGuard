@@ -50,6 +50,9 @@ inputguard.db
 *.log
 threats.log
 
+# Worktrees
+.worktrees/
+
 # --- OS Files ---
 .DS_Store
 Thumbs.db
