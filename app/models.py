@@ -7,5 +7,5 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(50), unique=True, nullable=False)
-    password = Column(String(64), nullable=False)
+    password = Column(String(128), nullable=False)
     created_at = Column(DateTime, server_default=func.current_timestamp())

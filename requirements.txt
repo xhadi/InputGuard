@@ -13,6 +13,9 @@ pydantic-settings
 python-multipart
 jinja2
 
+# Password Hashing
+bcrypt
+
 # Testing
 pytest
 httpx

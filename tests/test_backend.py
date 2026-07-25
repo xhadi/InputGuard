@@ -1,6 +1,6 @@
-import hashlib
 import os
 
+import bcrypt
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
@@ -82,11 +82,11 @@ def test_register_duplicate_username():
     assert body == {"success": False, "blocked": False, "message": "Username already taken", "reason": None}
 
 
-def test_password_is_sha256_hashed():
+def test_password_is_bcrypt_hash():
     client.post("/api/register", data={"username": "alice", "password": "secret"})
     db = TestingSessionLocal()
     user = db.query(User).filter(User.username == "alice").first()
-    assert user.password == hashlib.sha256("secret".encode()).hexdigest()
+    assert bcrypt.checkpw("secret".encode(), user.password.encode())
 
 
 def test_login_success():

@@ -1,4 +1,3 @@
-import hashlib
 import json
 from pathlib import Path
 
@@ -10,6 +9,7 @@ from sqlalchemy.orm import Session
 from app.config import settings
 from app.database import get_db
 from app.models import User
+from app.password_utils import hash_password, verify_password
 from security.gateway import process_request
 
 
@@ -57,7 +57,7 @@ async def api_register(
     if db.query(User).filter(User.username == username).first():
         return _envelope(False, False, "Username already taken")
 
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    hashed_password = hash_password(password)
     user = User(username=username, password=hashed_password)
     db.add(user)
     db.commit()
@@ -83,10 +83,9 @@ async def api_login(
                 result.get("reason"),
             )
 
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
     user = db.query(User).filter(User.username == username).first()
 
-    if user and user.password == hashed_password:
+    if user and verify_password(password, user.password):
         return _envelope(True, False, "Login successful")
 
     return _envelope(False, False, "Invalid credentials")
