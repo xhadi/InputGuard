@@ -1,4 +1,5 @@
 # Web Framework
+<<<<<<< HEAD
 fastapi==0.111.0
 uvicorn[standard]==0.30.0
 
@@ -12,3 +13,25 @@ pydantic-settings==2.3.4
 # Form Data & Templating
 python-multipart==0.0.9
 jinja2==3.1.4
+=======
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+
+# Environment & Configuration
+python-dotenv
+pydantic-settings
+
+# Form Data & Templating
+python-multipart
+jinja2
+
+# Password Hashing
+bcrypt
+
+# Testing
+pytest
+httpx
+>>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
