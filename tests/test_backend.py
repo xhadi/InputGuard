@@ -39,6 +39,7 @@ def setup_and_teardown():
     Base.metadata.create_all(bind=engine)
     yield
     Base.metadata.drop_all(bind=engine)
+    engine.dispose()
     if os.path.exists("test_inputguard.db"):
         os.remove("test_inputguard.db")
     if os.path.exists("test_threats.log"):
