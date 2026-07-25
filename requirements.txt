@@ -12,3 +12,7 @@ pydantic-settings
 # Form Data & Templating
 python-multipart
 jinja2
+
+# Testing
+pytest
+httpx
