@@ -115,24 +115,15 @@ One table only. No schema changes after Friday 10:00 AM without team vote.
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
-<<<<<<< HEAD
-    password VARCHAR(64) NOT NULL,
-=======
     password VARCHAR(128) NOT NULL,
->>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
 ### Rules
 
-<<<<<<< HEAD
-- **Password storage:** Always hash with `hashlib.sha256(password.encode()).hexdigest()` before storing or comparing.
-- **Password field length:** 64 characters (hex digest of SHA-256).
-=======
 - **Password storage:** Always hash with `bcrypt` before storing, and verify with `bcrypt.checkpw` on login.
 - **Password field length:** 128 characters (bcrypt hash string).
->>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
 - **Username constraints:** Max 50 chars, unique, not null.
 
 ---
@@ -268,11 +259,7 @@ inputguard/
 │   └── payloads.py
 │
 ├── 📂 docs/                        # Member D
-<<<<<<< HEAD
-│   └── TEAM_CONTRACTS.md
-=======
 │   └── Rules.md
->>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
 │
 ├── 📄 .env                         # Member C
 ├── 📄 Dockerfile                   # Member C
@@ -298,11 +285,7 @@ inputguard/
 
 **Signed-off:**
 
-<<<<<<< HEAD
-- [ ] Member A (Backend)
-=======
 - [x] Member A (Backend)
->>>>>>> 8f3b3466ef2595ec1daec9d78cdabae28ba2439f
-- [ ] Member B (Security)
+- [x] Member B (Security)
 - [ ] Member C (Frontend + DevOps)
 - [ ] Member D (Docs + QA)
