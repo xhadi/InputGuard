@@ -242,7 +242,6 @@ inputguard/
 │       └── app.js
 │
 ├── 📂 app/                         # Member A
-│   ├── __init__.py
 │   ├── main.py
 │   ├── routes.py
 │   ├── models.py
