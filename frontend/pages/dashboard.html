@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard | InputGuard
+{% endblock %}
+
+
+{% block body_class %}
+dashboard-page
+{% endblock %}
+
+
+{% block background %}
+
+<div class="cyber-background dashboard-bg-wrapper">
+
+    <div class="cyber-image dashboard-background"></div>
+
+    <div class="dashboard-background-overlay"></div>
+
+    <div class="cyber-grid dashboard-grid"></div>
+
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="dashboard-container">
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-brand">
+
+            <div class="dashboard-logo">
+                IG
+            </div>
+
+
+            <div>
+
+                <h1>
+                    InputGuard Dashboard
+                </h1>
+
+                <p class="dashboard-subtitle">
+                    Real-Time Security Monitoring
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <div class="system-status dashboard-status">
+
+                <span class="status-dot"></span>
+
+                Protection Active
+
+            </div>
+
+
+            <a
+                href="/"
+                class="logout-link"
+            >
+                Logout
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <div class="dashboard-divider"></div>
+
+
+    <div class="security-summary">
+
+        <div class="summary-card">
+
+            <span class="summary-label">
+                Security Engine
+            </span>
+
+            <strong>
+                Active
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-label">
+                Monitoring
+            </span>
+
+            <strong>
+                Real-Time
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span class="summary-label">
+                Threat Log
+            </span>
+
+            <strong>
+                Live
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div id="alertBox"></div>
+
+
+    <div class="log-section">
+
+        <div class="log-header">
+
+            <h2>
+                Detected Threats
+            </h2>
+
+            <p>
+                Security events blocked by InputGuard
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="threat-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Attack Type
+                        </th>
+
+                        <th>
+                            Payload
+                        </th>
+
+                        <th>
+                            IP Address
+                        </th>
+
+                        <th>
+                            Timestamp
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="threatLog">
+
+                    <tr>
+
+                        <td colspan="4">
+                            Loading threat log...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

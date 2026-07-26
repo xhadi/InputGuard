@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login | InputGuard
+{% endblock %}
+
+
+{% block body_class %}
+auth-page
+{% endblock %}
+
+
+{% block background %}
+
+<div class="cyber-background">
+
+    <div class="cyber-image login-background"></div>
+
+    <div class="cyber-dark-overlay"></div>
+
+    <div class="cyber-grid"></div>
+
+    <div class="cyber-scanline"></div>
+
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="auth-card">
+
+    <div class="brand-area">
+
+        <div class="shield-icon">
+            IG
+        </div>
+
+        <h1>
+            InputGuard
+        </h1>
+
+        <p class="security-tagline">
+            Intelligent Input Security Gateway
+        </p>
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+    </div>
+
+
+    <div id="alertBox"></div>
+
+
+    <form id="loginForm">
+
+        <div class="form-group">
+
+            <label for="loginUsername">
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="loginUsername"
+                name="username"
+                placeholder="Enter your username"
+                autocomplete="username"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="loginPassword">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="primary-button"
+        >
+            Secure Login
+        </button>
+
+    </form>
+
+
+    <p class="auth-link">
+
+        Don't have an account?
+
+        <a href="/register">
+            Create Account
+        </a>
+
+    </p>
+
+
+    <div class="security-footer">
+
+        <span>
+            Protected by InputGuard
+        </span>
+
+        <span class="footer-divider">
+            •
+        </span>
+
+        <span>
+            Threat Detection Active
+        </span>
+
+    </div>
+
+</section>
+
+{% endblock %}
