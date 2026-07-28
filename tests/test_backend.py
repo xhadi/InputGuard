@@ -85,8 +85,11 @@ def test_register_duplicate_username():
 def test_password_is_bcrypt_hash():
     client.post("/api/register", data={"username": "alice", "password": "secret"})
     db = TestingSessionLocal()
-    user = db.query(User).filter(User.username == "alice").first()
-    assert bcrypt.checkpw("secret".encode(), user.password.encode())
+    try:
+        user = db.query(User).filter(User.username == "alice").first()
+        assert bcrypt.checkpw("secret".encode(), user.password.encode())
+    finally:
+        db.close()
 
 
 def test_login_success():
