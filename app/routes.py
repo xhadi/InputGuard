@@ -14,7 +14,8 @@ from security.gateway import process_request
 
 
 router = APIRouter()
-templates = Jinja2Templates(directory="frontend/pages")
+BASE_DIR = Path(__file__).resolve().parent.parent
+templates = Jinja2Templates(directory=str(BASE_DIR / "frontend" / "pages"))
 
 
 def _envelope(success: bool, blocked: bool, message: str, reason: str | None = None) -> dict:
